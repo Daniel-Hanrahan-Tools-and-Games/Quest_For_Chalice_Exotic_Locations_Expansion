@@ -14,8 +14,8 @@
 </ul>
 <p>Not available for compacted version.</p>
 <img src="bubble_island_screenshot.png" alt="" width="400" height="267">
-<img src="foggy_lagoon_exotic_screenshot.png" alt="" width="400" height="267">
-<img src="sunset_beach_exotic_screenshot.png" alt="" width="400" height="267">
+<img src="foggy_lagoon_screenshot.png" alt="" width="400" height="267">
+<img src="sunset_beach_screenshot.png" alt="" width="400" height="267">
 
 
 <p>Why make this expansion open source the reason for that is I want to make sure this expansion is accessible to everyone and no one made an attempt to try to buy the expansion whatsoever, I did not see an email from anyone who wanted to buy it.</p>
