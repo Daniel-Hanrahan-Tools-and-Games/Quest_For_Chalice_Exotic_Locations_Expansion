@@ -10,7 +10,7 @@
 <ul>
     <li><a href="https://daniel-hanrahan-tools-and-games.github.io/Quest_For_Chalice/">Main Game Read Me Page</a></li>
     <li><a href="https://github.com/Daniel-Hanrahan-Tools-and-Games/Quest_For_Chalice">Main Game Repository Page</a></li>
-    <li><a href="https://github.com/Daniel-Hanrahan-Tools-and-Games/daniel-hanrahan-tools-and-games.github.io/tree/main">Site Repository Page</a></li>
+    <li><a href="https://github.com/Daniel-Hanrahan-Tools-and-Games/Quest_For_Chalice_Exotic_Locations_Expansion/edit/main/README.md">Repository Page</a></li>
 </ul>
 <p>Not available for compacted version or GCSE version and I hope someone makes a compacted or GCSE version of this expansion.</p>
 <img src="bubble_island_screenshot.png" alt="" width="400" height="267">
