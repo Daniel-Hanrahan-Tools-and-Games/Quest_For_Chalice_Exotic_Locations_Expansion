@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://ct4kkfd6ve40q"]
+
+[ext_resource type="Texture2D" uid="uid://cg7s1goco35ey" path="res://Quest_For_Chalice_Mod/quest for chalice mod spritesheet.png" id="1_1em24"]
+[ext_resource type="Script" path="res://Quest_For_Chalice_Mod/Coin.lua" id="1_st5bw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u1dyb"]
+atlas = ExtResource("1_1em24")
+region = Rect2(1750, 0, 350, 425)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1ou0j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u1dyb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g7isl"]
+size = Vector2(118, 110)
+
+[node name="Coin" type="Area2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_st5bw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_1ou0j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_g7isl")
+
+[connection signal="body_entered" from="." to="." method="Collision"]

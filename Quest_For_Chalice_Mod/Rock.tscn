@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://b1gh2ifndi406"]
+
+[ext_resource type="Script" path="res://Quest_For_Chalice_Mod/Rock.lua" id="1_dro1k"]
+[ext_resource type="Texture2D" uid="uid://cg7s1goco35ey" path="res://Quest_For_Chalice_Mod/quest for chalice mod spritesheet.png" id="1_kfwdq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_25puu"]
+atlas = ExtResource("1_kfwdq")
+region = Rect2(1443, 0, 229, 425)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rcikw"]
+atlas = ExtResource("1_kfwdq")
+region = Rect2(1095, 0, 219, 425)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n0u2k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_25puu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rcikw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6x0ny"]
+size = Vector2(91, 120)
+
+[node name="Rock" type="Area2D"]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_dro1k")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_n0u2k")
+frame_progress = 0.918484
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 3)
+shape = SubResource("RectangleShape2D_6x0ny")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(1.5, 3.5)
+scale = Vector2(4.55, 6.15)
+
+[connection signal="body_entered" from="." to="." method="Collision"]
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="Respawn"]

@@ -1,0 +1,81 @@
+[gd_scene load_steps=8 format=3 uid="uid://bqfxf8chap6br"]
+
+[ext_resource type="Texture2D" uid="uid://bah6cs7us5i0m" path="res://Quest_For_Chalice_Mod/sunset_beach.jpg" id="1_v7vpr"]
+[ext_resource type="Script" path="res://Quest_For_Chalice_Mod/NextArea.lua" id="2_luvc5"]
+[ext_resource type="PackedScene" uid="uid://dvn5m3pewp6d7" path="res://Quest_For_Chalice_Mod/ModPlayer.tscn" id="3_yluux"]
+[ext_resource type="PackedScene" uid="uid://b1gh2ifndi406" path="res://Quest_For_Chalice_Mod/Rock.tscn" id="4_wlr7x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_duabf"]
+size = Vector2(60, 661)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qikro"]
+size = Vector2(1160, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7r01w"]
+size = Vector2(37.5, 644)
+
+[node name="ModRoom" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(574, 322)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_v7vpr")
+expand_mode = 1
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-28, 318)
+shape = SubResource("RectangleShape2D_duabf")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(573, 634)
+shape = SubResource("RectangleShape2D_qikro")
+
+[node name="NextArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("2_luvc5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NextArea"]
+position = Vector2(1171.25, 326)
+shape = SubResource("RectangleShape2D_7r01w")
+
+[node name="ModPlayer" parent="." instance=ExtResource("3_yluux")]
+position = Vector2(54, 508)
+
+[node name="Label" type="RichTextLabel" parent="."]
+offset_left = 9.0
+offset_top = 5.0
+offset_right = 428.0
+offset_bottom = 315.0
+bbcode_enabled = true
+text = "[color=#000000]Quest_For_Chalice_Exotic_Locales_Expansion [/color]
+[color=#000000]Copyright (C) 2025 Daniel Hanrahan Tools and Games[/color]
+[color=#000000]SPDX-License-Identifier: GPL-3.0-or-later[/color]
+[color=#000000]A copy of the GNU General Public License is[/color]
+[color=#000000]included in the file COPYING; if not, see[/color]
+[color=#000000]<https://www.gnu.org/licenses/>.[/color]
+[color=#000000]Information just about the stuff in this[/color]
+[color=#000000]software not covered by the GNU General[/color]
+[color=#000000]Public License version 3: This work is[/color]
+[color=#000000]licensed under Attribution-ShareAlike[/color]
+[color=#000000]4.0 International[/color]
+[color=#000000]Due to engine glitches, game restart might be neccessary.[/color]
+"
+
+[node name="Rock" parent="." instance=ExtResource("4_wlr7x")]
+position = Vector2(1095, 535)
+
+[node name="Rock2" parent="." instance=ExtResource("4_wlr7x")]
+position = Vector2(922, 196)
+
+[node name="Rock3" parent="." instance=ExtResource("4_wlr7x")]
+position = Vector2(498, 532)
+
+[connection signal="body_entered" from="NextArea" to="NextArea" method="Collision"]

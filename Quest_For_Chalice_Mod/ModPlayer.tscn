@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://dvn5m3pewp6d7"]
+
+[ext_resource type="Texture2D" uid="uid://cg7s1goco35ey" path="res://Quest_For_Chalice_Mod/quest for chalice mod spritesheet.png" id="1_6wh6r"]
+[ext_resource type="Script" path="res://Quest_For_Chalice_Mod/ModPlayer.lua" id="1_ydhkb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8jbbs"]
+atlas = ExtResource("1_6wh6r")
+region = Rect2(219, 0, 219, 425)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i7om6"]
+atlas = ExtResource("1_6wh6r")
+region = Rect2(489, 0, 215, 425)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_318hk"]
+atlas = ExtResource("1_6wh6r")
+region = Rect2(758, 0, 211, 425)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g7abp"]
+atlas = ExtResource("1_6wh6r")
+region = Rect2(489, 0, 215, 425)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8lbnu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8jbbs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i7om6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_318hk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g7abp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pasog"]
+size = Vector2(162, 364)
+
+[node name="ModPlayer" type="CharacterBody2D"]
+collision_layer = 7
+collision_mask = 7
+script = ExtResource("1_ydhkb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_8lbnu")
+frame_progress = 0.698477
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5, 4)
+scale = Vector2(0.4, 0.4)
+shape = SubResource("RectangleShape2D_pasog")
