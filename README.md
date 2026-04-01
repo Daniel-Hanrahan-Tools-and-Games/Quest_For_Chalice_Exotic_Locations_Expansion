@@ -1,0 +1,2 @@
+# Quest_For_Chalice_Exotic_Locations_Expansion
+The exotic locations expansion for Quest_For_Chalice
